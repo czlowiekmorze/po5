@@ -1,0 +1,37 @@
+using System;
+
+namespace po5
+{
+    class Funkcja
+    {
+        public void Zamien(ref int a, ref int b)
+        {
+            int tmp = a;
+            a = b;
+            b = tmp;
+        }
+
+        public int Zamien2(int a)
+        {
+            return 2 * a++;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x = 2, y = 3;
+            Console.WriteLine("x= "+ x +" y = "+ y);
+            Funkcja f1 = new Funkcja();
+            f1.Zamien(ref x, ref y);
+            Console.WriteLine("x= " + x + " y = " + y);
+         
+        
+           
+            Console.WriteLine("x= " + x);
+            Funkcja f2 = new Funkcja();
+            y = f2.Zamien2(x);
+            Console.WriteLine("x= " + x + "y =" + y);
+        } 
+    }
+}
